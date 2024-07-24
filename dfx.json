@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "launchpad_backend": {
+      "candid": "src/launchpad_backend/launchpad_backend.did",
+      "package": "launchpad_backend",
+      "type": "rust"
+    },
+    "launchpad_frontend": {
+      "dependencies": [
+        "launchpad_backend"
+      ],
+      "source": [
+        "src/launchpad_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "launchpad_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
