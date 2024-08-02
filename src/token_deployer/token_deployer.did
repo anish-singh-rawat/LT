@@ -1,0 +1,22 @@
+type CanisterSettings = record {
+  freezing_threshold : opt nat;
+  controllers : opt vec principal;
+  memory_allocation : opt nat;
+  compute_allocation : opt nat;
+};
+type Contract = record {
+  duration : nat;
+  token_id : text;
+  recurring : nat;
+  start_time : nat;
+  receivers : vec principal;
+  amount : nat;
+};
+type Result = variant { Ok; Err : text };
+type Result_1 = variant { Ok : principal; Err : text };
+type Result_2 = variant { Ok : text; Err : text };
+service : {
+  add_controller : (principal, vec principal) -> (Result);
+  create_canister : (opt CanisterSettings) -> (Result_1);
+  create_contract : (Contract) -> (Result_2);
+}

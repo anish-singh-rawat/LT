@@ -31,3 +31,4 @@ record {
 dfx deploy launchpad_backend
 dfx deploy launchpad_frontend 
 dfx deploy launchpad_contract
+dfx deploy token_deployer
