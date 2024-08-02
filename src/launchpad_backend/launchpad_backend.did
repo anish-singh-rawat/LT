@@ -4,5 +4,17 @@ type CanisterSettings = record {
   memory_allocation : opt nat;
   compute_allocation : opt nat;
 };
+type Contract = record {
+  duration : nat;
+  token_id : text;
+  recurring : nat;
+  start_time : nat;
+  receivers : vec principal;
+  amount : nat;
+};
 type Result = variant { Ok : principal; Err : text };
-service : { create_canister : (opt CanisterSettings) -> (Result) }
+type Result_1 = variant { Ok : text; Err : text };
+service : {
+  create_canister : (opt CanisterSettings) -> (Result);
+  create_contract : (Contract) -> (Result_1);
+}
