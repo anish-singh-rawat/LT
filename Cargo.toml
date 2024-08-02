@@ -1,5 +1,6 @@
 [workspace]
 members = [
-    "src/launchpad_backend"
+    "src/launchpad_backend",
+    "src/launchpad_contract"
 ]
 resolver = "2"
