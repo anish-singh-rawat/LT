@@ -4,15 +4,18 @@ import { launchpad_backend } from 'declarations/launchpad_backend';
 function App() {
   const [greeting, setGreeting] = useState('');
 
-  function handleSubmit(event) {
+  const handleSubmit = async (event) =>{
     event.preventDefault();
     const name = event.target.elements.name.value;
-    launchpad_backend.greet(name).then((greeting) => {
+    const payload ={
+      id : Math.floor(Math.random() * 10000),
+      name : name
+    }
+    const greeting = await launchpad_backend.add_message(payload)
       setGreeting(greeting);
-    });
-    return false;
+      console.log(greeting,'greeting')
   }
-
+  
   return (
     <main>
       <img src="/logo2.svg" alt="DFINITY logo" />

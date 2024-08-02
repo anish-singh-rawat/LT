@@ -1,3 +1,8 @@
-service : {
-    "greet": (text) -> (text) query;
-}
+type CanisterSettings = record {
+  freezing_threshold : opt nat;
+  controllers : opt vec principal;
+  memory_allocation : opt nat;
+  compute_allocation : opt nat;
+};
+type Result = variant { Ok : principal; Err : text };
+service : { create_canister : (opt CanisterSettings) -> (Result) }
