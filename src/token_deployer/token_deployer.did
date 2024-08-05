@@ -1,0 +1,14 @@
+type InitArgsRequested = record {
+  token_symbol : text;
+  transfer_fee : nat64;
+  logo : text;
+  fee_collector_account : opt principal;
+  token_name : text;
+};
+type Result = variant { Ok : principal; Err : text };
+type Result_1 = variant { Ok; Err : text };
+service : {
+  get_canister_balance : () -> (nat) query;
+  install : (InitArgsRequested) -> (Result);
+  transfer_ownership : (principal, principal) -> (Result_1);
+}

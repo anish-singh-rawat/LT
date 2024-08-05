@@ -1,9 +1,19 @@
 {
   "canisters": {
-   "launchpad_backend": {
-     "candid": "src/launchpad_backend/launchpad_backend.did",
-     "package": "launchpad_backend",
-     "type": "rust"
+    "launchpad_backend": {
+      "candid": "src/launchpad_backend/launchpad_backend.did",
+      "package": "launchpad_backend",
+      "type": "rust"
+    },
+    "launchpad_contract": {
+      "candid": "src/launchpad_contract/launchpad_contract.did",
+      "package": "launchpad_contract",
+      "type": "rust"
+    },
+    "token_deployer": {
+     "candid": "src/token_deployer/token_deployer.did",
+      "package": "token_deployer",
+      "type": "rust"
     },
     "icrc1_ledger_canister": {
       "type": "custom",
